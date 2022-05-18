@@ -1,0 +1,19 @@
+.button {
+  background: #016fb9;
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  margin: 20px;
+  width: 180px;
+  height: 50px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.5s ease 0s;
+  border: none;
+}
+
+.button:hover {
+  transform: scale(1.05);
+} 

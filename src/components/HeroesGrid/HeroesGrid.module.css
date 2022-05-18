@@ -1,0 +1,47 @@
+.heroesGrid {
+  @apply justify-center grid h-2/4 overflow-y-scroll relative z-10;
+  @apply gap-4 md:gap-8 lg:gap-10;
+  @apply pt-8 pb-12 lg:pt-12 lg:pb-16;
+  grid-template-columns: repeat(auto-fit, 128px);
+  grid-template-rows: repeat(auto-fit, 128px);
+  height: 450px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.heroesGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.heroesGrid:before {
+  @apply fixed w-full z-20;
+  content: '';
+  height: 9%;
+  bottom: calc(100% - 450px);
+  background: linear-gradient(transparent 0px, black);
+}
+
+.heroesGrid__item {
+  @apply bg-black overflow-hidden flex items-center justify-center text-center rounded-2xl w-32 cursor-pointer;
+  @apply transition-transform;
+  transform: scale(1);
+  height: 128px;
+}
+
+.heroesGrid__item:hover {
+  @apply transition-transform;
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 768px) {
+  .heroesGrid {
+    @apply gap-4;
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-template-rows: repeat(auto-fit, 100px);
+  }
+
+  .heroesGrid__item {
+    @apply w-24;
+    height: 100px;
+  }
+}

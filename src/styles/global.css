@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.content {
+  @apply mx-auto h-full;
+  max-width: 1920px;
+}
+
+.section-padding {
+  @apply sm:p-2 md:p-4 lg:p-8;
+}

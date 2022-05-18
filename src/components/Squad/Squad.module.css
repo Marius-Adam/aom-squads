@@ -1,0 +1,16 @@
+.squad {
+  @apply flex-wrap justify-center flex relative z-10 gap-4 mx-auto rounded-3xl border-solid;
+  max-width: fit-content;
+  margin-top: 5%;
+}
+
+.squad__item {
+  @apply flex items-center justify-center text-center rounded-2xl w-32 h-32 cursor-pointer overflow-hidden bg-black;
+}
+
+@media only screen and (max-width: 768px) {
+  .squad__item {
+    @apply w-24;
+    height: 100px;
+  }
+}
