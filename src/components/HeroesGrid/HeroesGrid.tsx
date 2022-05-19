@@ -25,6 +25,8 @@ const HeroesGrid = ({ heroes, selectHero }: IHeroesGrid) => {
               width="128px"
               src={`/assets/images/heroes/${hero.name}.jpg`}
               objectFit="cover"
+              blurDataURL={`/assets/images/heroes/${hero.name}.jpg`}
+              placeholder="blur"
             />
           </div>
         );

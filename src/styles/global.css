@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  @apply h-screen w-screen bg-black;
+  font-family: 'Koulen', serif;
+}
+
 .content {
   @apply mx-auto h-full;
   max-width: 1920px;
+
 }
 
 .section-padding {

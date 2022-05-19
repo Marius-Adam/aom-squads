@@ -7,6 +7,8 @@
   height: 450px;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  background: url(/background.jpg);
+  background-size: cover;
 }
 
 .heroesGrid::-webkit-scrollbar {
@@ -16,7 +18,7 @@
 .heroesGrid:before {
   @apply fixed w-full z-20;
   content: '';
-  height: 9%;
+  height: 5%;
   bottom: calc(100% - 450px);
   background: linear-gradient(transparent 0px, black);
 }
@@ -38,10 +40,14 @@
     @apply gap-4;
     grid-template-columns: repeat(auto-fit, 100px);
     grid-template-rows: repeat(auto-fit, 100px);
+    height: 250px;
+  }
+
+  .heroesGrid:before {
+    bottom: calc(100% - 250px);
   }
 
   .heroesGrid__item {
-    @apply w-24;
-    height: 100px;
+    @apply w-24 h-24;
   }
 }

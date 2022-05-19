@@ -1,7 +1,7 @@
 .squad {
   @apply flex-wrap justify-center flex relative z-10 gap-4 mx-auto rounded-3xl border-solid;
   max-width: fit-content;
-  margin-top: 5%;
+  margin-top: 7%;
 }
 
 .squad__item {
@@ -9,8 +9,11 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .squad {
+    margin-top: 20%;
+  }
+
   .squad__item {
-    @apply w-24;
-    height: 100px;
+    @apply w-24 h-24;
   }
 }

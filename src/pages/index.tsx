@@ -40,7 +40,7 @@ const Index = () => {
       squad.map((hero) => (hero?.name !== name ? hero : placeholder[0]))
     );
   };
-  console.log(squad);
+
   return (
     <Main
       meta={
@@ -52,8 +52,8 @@ const Index = () => {
     >
       <HeroesGrid heroes={heroes} selectHero={handleHeroSelect} />
       <Squad squad={squad} removeHero={handleRemoveHero} />
-      <div className="flex justify-center">
-        <Button>Button</Button>
+      <div className="mt-10 flex justify-center">
+        <Button>Generate Squads</Button>
       </div>
     </Main>
   );
