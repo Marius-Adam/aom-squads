@@ -1,7 +1,17 @@
 import css from './Button.module.css';
 
-const Button = ({ children }: { children: React.ReactNode }) => {
-  return <button className={css.button}>{children}</button>;
+interface IButton {
+  children: React.ReactNode;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
+}
+
+const Button = ({ children, onClick, disabled }: IButton) => {
+  return (
+    <button disabled={disabled} onClick={onClick} className={css.button}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

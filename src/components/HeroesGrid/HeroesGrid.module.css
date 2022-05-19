@@ -1,10 +1,10 @@
 .heroesGrid {
   @apply justify-center grid h-2/4 overflow-y-scroll relative z-10;
   @apply gap-4 md:gap-8 lg:gap-10;
-  @apply pt-8 pb-12 lg:pt-12 lg:pb-16;
+  @apply pt-8 pb-12 lg:pb-16;
   grid-template-columns: repeat(auto-fit, 128px);
   grid-template-rows: repeat(auto-fit, 128px);
-  height: 450px;
+  height: 500px;
   -ms-overflow-style: none;
   scrollbar-width: none;
   background: url(/background.jpg);
@@ -19,7 +19,7 @@
   @apply fixed w-full z-20;
   content: '';
   height: 5%;
-  bottom: calc(100% - 450px);
+  bottom: calc(100% - 500px);
   background: linear-gradient(transparent 0px, black);
 }
 
@@ -31,20 +31,19 @@
 }
 
 .heroesGrid__item:hover {
-  @apply transition-transform;
   transform: scale(1.05);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 640px) {
   .heroesGrid {
     @apply gap-4;
     grid-template-columns: repeat(auto-fit, 100px);
     grid-template-rows: repeat(auto-fit, 100px);
-    height: 250px;
+    height: 260px;
   }
 
   .heroesGrid:before {
-    bottom: calc(100% - 250px);
+    bottom: calc(100% - 260px);
   }
 
   .heroesGrid__item {

@@ -1,9 +1,12 @@
+import { isEqual } from 'lodash';
+import Router from 'next/router';
 import { useEffect, useState } from 'react';
 
 import { heroes, placeholder } from '@/api/heroes';
-import Button from '@/components/Button/Button';
-import HeroesGrid from '@/components/HeroesGrid/HeroesGrid';
-import Squad from '@/components/Squad/Squad';
+import Button from '@/components/Button';
+import HeroesGrid from '@/components/HeroesGrid';
+import MotionDiv from '@/components/MotionDiv';
+import Squad from '@/components/Squad';
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 import type { Hero } from '@/utils/Types';
@@ -13,15 +16,15 @@ const Index = () => {
   const [idxToUpdate, setIdxToUpdate] = useState<number | undefined>(0);
 
   useEffect(() => {
-    // if squad is empty reset idxToUpdate
-    if (JSON.stringify(squad) === JSON.stringify(placeholder)) {
+    // if squad contains only placeholders, reset idxToUpdate to 0
+    if (isEqual(squad, placeholder)) {
       setIdxToUpdate(0);
     }
-    // set idxToUpdate to the element which is a placeholder
+    // set idxToUpdate to the item which is a placeholder
     setIdxToUpdate(squad.findIndex((hero) => hero?.name === 'Placeholder'));
   }, [squad]);
 
-  const handleHeroSelect = (name: string) => {
+  const handleSelectHero = (name: string) => {
     const selectedHero = heroes.filter((hero) => hero.name === name);
     // only if selectedHero does not already exist
     if (!squad.includes(selectedHero[0])) {
@@ -41,6 +44,16 @@ const Index = () => {
     );
   };
 
+  const hasPlaceholder = squad.some((hero) => {
+    return hero?.name === 'Placeholder';
+  });
+
+  const redirectToResults = () => {
+    if (!hasPlaceholder) {
+      Router.push('/results');
+    }
+  };
+
   return (
     <Main
       meta={
@@ -50,11 +63,15 @@ const Index = () => {
         />
       }
     >
-      <HeroesGrid heroes={heroes} selectHero={handleHeroSelect} />
-      <Squad squad={squad} removeHero={handleRemoveHero} />
-      <div className="mt-10 flex justify-center">
-        <Button>Generate Squads</Button>
-      </div>
+      <MotionDiv>
+        <HeroesGrid heroes={heroes} selectHero={handleSelectHero} />
+        <Squad squad={squad} removeHero={handleRemoveHero} />
+        <div className="mt-10 flex justify-center">
+          <Button disabled={hasPlaceholder} onClick={redirectToResults}>
+            Generate Squads
+          </Button>
+        </div>
+      </MotionDiv>
     </Main>
   );
 };

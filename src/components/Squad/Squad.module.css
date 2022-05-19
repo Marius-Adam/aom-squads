@@ -8,7 +8,8 @@
   @apply flex items-center justify-center text-center rounded-2xl w-32 h-32 cursor-pointer overflow-hidden bg-black;
 }
 
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 640px) {
   .squad {
     margin-top: 20%;
   }

@@ -8,6 +8,14 @@
 }
 
 .button:hover {
-  @apply transition-transform;
   transform: scale(1.05);
+}
+
+.button:disabled {
+  background-color: lightgray;
+}
+
+.button:disabled:hover {
+  transform: scale(1);
+  cursor: not-allowed;
 }
