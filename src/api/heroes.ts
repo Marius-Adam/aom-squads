@@ -560,12 +560,6 @@ export const heroes = [
     brotherhood: ['Mercenaries'],
   },
   {
-    name: 'Goblinia Sweetvoice',
-    class: 'Caster',
-    faction: 'Goblins',
-    brotherhood: ['Brawlers'],
-  },
-  {
     name: 'Tahit',
     class: 'Melee Damager',
     faction: 'Ra`Archne',
