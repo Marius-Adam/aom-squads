@@ -421,12 +421,6 @@ export const heroes = [
     brotherhood: ['Group of Villains'],
   },
   {
-    name: 'Raarspit',
-    class: 'Ranged Damager',
-    faction: 'Ra`Archne',
-    brotherhood: ['Group of Villains'],
-  },
-  {
     name: 'Rizer',
     class: 'Rogue',
     faction: 'Ra`Archne',

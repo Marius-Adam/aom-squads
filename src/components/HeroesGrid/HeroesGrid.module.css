@@ -1,26 +1,30 @@
 .heroesGrid {
-  @apply justify-center grid h-2/4 overflow-y-scroll relative z-10;
+  @apply justify-center grid h-2/4 overflow-y-scroll z-10 w-full;
   @apply gap-4 md:gap-8 lg:gap-10;
-  @apply pt-8 pb-12 lg:pb-16;
+  @apply pb-12 lg:pb-16;
   grid-template-columns: repeat(auto-fit, 128px);
   grid-template-rows: repeat(auto-fit, 128px);
   height: 500px;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  background: url(/background.jpg);
-  background-size: cover;
 }
 
 .heroesGrid::-webkit-scrollbar {
   display: none;
 }
 
-.heroesGrid:before {
+.heroesGrid__wrapper:before {
   @apply fixed w-full z-20;
   content: '';
   height: 5%;
-  bottom: calc(100% - 500px);
+  bottom: calc(100% - 584px);
   background: linear-gradient(transparent 0px, black);
+}
+
+.heroesGrid__wrapper {
+  @apply relative;
+  background: url(/background.jpg);
+  background-size: cover;
 }
 
 .heroesGrid__item {
@@ -42,8 +46,8 @@
     height: 260px;
   }
 
-  .heroesGrid:before {
-    bottom: calc(100% - 260px);
+  .heroesGrid__wrapper:before {
+    bottom: calc(100% - 348px);
   }
 
   .heroesGrid__item {

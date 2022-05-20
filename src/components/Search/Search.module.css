@@ -1,0 +1,46 @@
+.search {
+  @apply rounded-2xl p-2 flex mx-auto;
+  width: 300px;
+  background: #353535;
+}
+
+.search__wrapper {
+  @apply bg-transparent py-3;
+}
+
+.search__input {
+  @apply text-xl;
+  background: #353535;
+  color: #fff;
+  outline: none;
+  border: none;
+  width: 300px;
+  transition: all 0.3s ease-in-out;
+}
+.search__btn {
+  @apply rounded-2xl p-2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: #fff;
+  color: #ff5722;
+  transition: 0.4s ease;
+}
+
+.search:hover > .search__btn {
+  background: #ff5722;
+}
+.search__input:focus + .search__btn {
+  background: #ff5722;
+}
+
+@media only screen and (max-width: 640px) {
+  .search__wrapper {
+    @apply py-4;
+  }
+
+  .search__input {
+    @apply text-lg;
+  }
+}
