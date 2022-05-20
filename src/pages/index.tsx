@@ -17,7 +17,6 @@ const Index = () => {
     redirectToResults,
     squad,
   } = useHeroes({ heroes, placeholder });
-  console.log(searchResults);
   return (
     <Main
       meta={
@@ -34,7 +33,7 @@ const Index = () => {
           searchHero={handleSearchHero}
         />
         <Squad squad={squad} removeHero={handleRemoveHero} />
-        <div className="mt-10 flex justify-center">
+        <div className="mt-8 flex justify-center">
           <Button disabled={hasPlaceholder} onClick={redirectToResults}>
             Generate Squads
           </Button>

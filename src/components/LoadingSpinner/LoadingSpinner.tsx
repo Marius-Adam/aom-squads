@@ -13,7 +13,7 @@ const LoadingSpinner = () => {
       >
         <defs>
           <linearGradient id="pl-grad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="hsl(193,90%,55%)" />
+            <stop offset="0%" stopColor="hsla(14, 100%, 57%, 1)" />
             <stop offset="100%" stopColor="hsl(223,90%,55%)" />
           </linearGradient>
         </defs>

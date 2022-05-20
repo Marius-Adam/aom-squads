@@ -14,6 +14,7 @@ interface IHeroesGrid {
 const HeroesGrid = ({ heroes, selectHero, searchHero }: IHeroesGrid) => {
   return (
     <div className={css.heroesGrid__wrapper}>
+      <div className={css.stickyShadow} />
       <Search onChange={searchHero} />
       <div className={css.heroesGrid}>
         {heroes.map((hero, idx) => {
