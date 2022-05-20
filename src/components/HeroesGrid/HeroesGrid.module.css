@@ -17,7 +17,7 @@
   @apply absolute w-full z-20;
   content: '';
   height: 10%;
-  bottom: calc(100% - 534px);
+  bottom: calc(100% - 530px);
   background: linear-gradient(transparent 0px, black);
 }
 
