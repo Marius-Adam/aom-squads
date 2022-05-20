@@ -31,7 +31,7 @@ export const useHeroes = ({ heroes, placeholder }: IUseHeroes) => {
 
   useEffect(() => {
     const results = heroes.filter((hero) =>
-      hero.name.toLowerCase().includes(searchQuery)
+      hero.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setSearchResults(results);
   }, [searchQuery]);
