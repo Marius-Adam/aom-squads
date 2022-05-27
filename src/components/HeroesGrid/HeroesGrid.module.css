@@ -17,7 +17,7 @@
   @apply absolute w-full z-20;
   content: '';
   height: 10%;
-  bottom: calc(100% - 530px);
+  bottom: calc(100% - 522px);
   background: linear-gradient(transparent 0px, black);
 }
 
@@ -47,7 +47,7 @@
   }
 
   .heroesGrid__wrapper:before {
-    bottom: calc(100% - 338px);
+    bottom: calc(100% - 330px);
   }
 
   .heroesGrid__item {
