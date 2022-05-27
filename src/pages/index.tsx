@@ -1,9 +1,11 @@
 import { heroes, placeholder } from '@/api/heroes';
+import { allSquads } from '@/api/squads';
 import Button from '@/components/Button';
 import HeroesGrid from '@/components/HeroesGrid';
 import MotionDiv from '@/components/MotionDiv';
 import Squad from '@/components/Squad';
 import { useHeroes } from '@/hooks/useHeroes';
+import { useSquads } from '@/hooks/useSquads';
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 
@@ -15,8 +17,11 @@ const Index = () => {
     handleRemoveHero,
     hasPlaceholder,
     redirectToResults,
-    squad,
+    selectedSquad,
   } = useHeroes({ heroes, placeholder });
+
+  const { squadName } = useSquads({ selectedSquad, allSquads });
+
   return (
     <Main
       meta={
@@ -32,10 +37,14 @@ const Index = () => {
           selectHero={handleSelectHero}
           searchHero={handleSearchHero}
         />
-        <Squad squad={squad} removeHero={handleRemoveHero} />
+        <Squad
+          squad={selectedSquad}
+          removeHero={handleRemoveHero}
+          title={squadName}
+        />
         <div className="mt-8 flex justify-center">
           <Button disabled={hasPlaceholder} onClick={redirectToResults}>
-            Generate Squads
+            Generate Recommendations
           </Button>
         </div>
       </MotionDiv>

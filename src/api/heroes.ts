@@ -18,6 +18,24 @@ export const heroes = [
     brotherhood: ['Mercenaries'],
   },
   {
+    name: 'Akhrasht',
+    class: 'Tank',
+    faction: 'Ra`Archne',
+    brotherhood: ['Group of Villains'],
+  },
+  {
+    name: 'Ambror',
+    class: 'Ranged Damager',
+    faction: 'Dwarves',
+    brotherhood: ['Roland Allies', 'Lost Allies'],
+  },
+  {
+    name: 'Angrim',
+    class: 'Melee Damager',
+    faction: 'Dwarves',
+    brotherhood: ['Roland Allies'],
+  },
+  {
     name: 'Arekhon Axe Thrower',
     class: 'Ranged Damager',
     faction: 'Arekhon Undead',
@@ -492,13 +510,12 @@ export const heroes = [
     faction: 'Changelings',
     brotherhood: [null],
   },
-  // {
-  //   name: 'Shni',
-  //   class: 'Rogue',
-  //   faction: 'Kobolds',
-  //   brotherhood: [null],
-  //
-  // },
+  {
+    name: 'Shni',
+    class: 'Rogue',
+    faction: 'Kobolds',
+    brotherhood: [null],
+  },
   {
     name: 'Siegfried',
     class: 'Tank',

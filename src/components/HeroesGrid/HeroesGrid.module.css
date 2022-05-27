@@ -1,7 +1,7 @@
 .heroesGrid {
   @apply justify-center grid h-2/4 overflow-y-scroll z-10 w-full;
   @apply gap-4 md:gap-8 lg:gap-10;
-  @apply pb-12 lg:pb-16;
+  @apply pb-12 pt-2;
   grid-template-columns: repeat(auto-fit, 128px);
   grid-template-rows: repeat(auto-fit, 128px);
   height: 450px;

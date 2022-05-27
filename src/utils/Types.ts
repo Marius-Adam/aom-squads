@@ -4,3 +4,8 @@ export interface Hero {
   faction: string;
   brotherhood: string[] | null[];
 }
+
+export interface Squad {
+  name: string;
+  squadHeroes: string[];
+}

@@ -1,29 +1,30 @@
 .search {
-  @apply rounded-2xl p-2 flex mx-auto;
+  @apply rounded-2xl p-2 flex mx-auto bg-transparent;
   width: 300px;
-  background: #353535;
 }
 
 .search__wrapper {
-  @apply bg-transparent py-3;
+  @apply bg-transparent pt-3 pb-1;
 }
 
 .search__input {
-  @apply text-xl;
-  background: #353535;
-  color: #fff;
+  @apply text-xl bg-transparent text-white;
   outline: none;
   border: none;
   width: 300px;
   transition: all 0.3s ease-in-out;
 }
+
+.search__input::placeholder {
+  @apply text-white;
+}
+
 .search__btn {
-  @apply rounded-2xl p-2;
+  @apply rounded-2xl p-2 flex justify-center items-center bg-white;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  background: #fff;
   color: #ff5722;
   transition: 0.4s ease;
 }
