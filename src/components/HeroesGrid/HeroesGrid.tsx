@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import type { Hero } from '@/utils/Types';
 
-import Search from '../Search';
+import Search from '../SearchBar';
 import css from './HeroesGrid.module.css';
 
 interface IHeroesGrid {

@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply h-screen w-screen bg-black;
+  @apply h-screen bg-black;
   font-family: 'Koulen', serif;
 }
 

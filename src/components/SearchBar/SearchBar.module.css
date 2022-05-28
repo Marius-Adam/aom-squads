@@ -1,0 +1,52 @@
+.searchBar {
+  @apply bg-transparent pt-3 pb-2 px-16 flex justify-between items-center;
+}
+
+.searchBar__filters {
+  @apply rounded-2xl flex bg-transparent w-1/2;
+}
+
+.searchBar__search {
+  @apply rounded-2xl flex bg-transparent w-1/2 justify-end;
+}
+
+.searchBar__input {
+  @apply text-xl bg-transparent text-white;
+  @apply transition-all;
+  outline: none;
+  border: none;
+}
+
+.searchBar__input::placeholder {
+  @apply text-white;
+}
+
+.searchBar__btn {
+  @apply rounded-2xl p-2 flex justify-center items-center bg-white cursor-pointer;
+  @apply transition-all;
+  text-decoration: none;
+  color: #ff5722;
+}
+
+.searchBar__filters:hover > .searchBar__btn,
+.searchBar__search:hover > .searchBar__btn {
+  background: #ff5722;
+}
+.searchBar__input:focus + .searchBar__btn {
+  background: #ff5722;
+}
+
+@media only screen and (max-width: 640px) {
+  .searchBar {
+    @apply p-0 px-8 py-2;
+  }
+
+  .searchBar__search {
+    width: unset;
+  }
+
+  .searchBar__input {
+    @apply text-lg;
+    width: unset;
+  }
+}

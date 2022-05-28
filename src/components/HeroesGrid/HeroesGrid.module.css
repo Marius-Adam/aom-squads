@@ -1,7 +1,7 @@
 .heroesGrid {
   @apply justify-center grid h-2/4 overflow-y-scroll z-10 w-full;
   @apply gap-4 md:gap-8 lg:gap-10;
-  @apply pb-12 pt-2;
+  @apply pb-12 pt-1;
   grid-template-columns: repeat(auto-fit, 128px);
   grid-template-rows: repeat(auto-fit, 128px);
   height: 450px;
@@ -17,7 +17,7 @@
   @apply absolute w-full z-20;
   content: '';
   height: 10%;
-  bottom: calc(100% - 522px);
+  bottom: calc(100% - 510px);
   background: linear-gradient(transparent 0px, black);
 }
 
@@ -47,7 +47,7 @@
   }
 
   .heroesGrid__wrapper:before {
-    bottom: calc(100% - 330px);
+    bottom: calc(100% - 306px);
   }
 
   .heroesGrid__item {
