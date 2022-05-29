@@ -1,6 +1,6 @@
 .squad {
   @apply flex flex-col items-center gap-4;
-  margin-top: 4%;
+  margin-top: 2%;
 }
 
 .squad__wrapper {
