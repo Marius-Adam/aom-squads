@@ -11,26 +11,26 @@ interface IUseHeroes {
 
 export const useHeroes = ({ heroes, placeholder }: IUseHeroes) => {
   const router = useRouter();
-  const [selectedSquad, setSelectedSquad] =
+  const [selectedHeroes, setSelectedHeroes] =
     useState<(Hero | undefined)[]>(placeholder);
   const [searchResults, setSearchResults] = useState<Hero[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [idxToUpdate, setIdxToUpdate] = useState<number | undefined>(0);
 
-  const hasPlaceholder = selectedSquad.some((hero) => {
+  const hasPlaceholder = selectedHeroes.some((hero) => {
     return hero?.name === 'Placeholder';
   });
 
   useEffect(() => {
     // if squad contains only placeholders, reset idxToUpdate to 0
-    if (isEqual(selectedSquad, placeholder)) {
+    if (isEqual(selectedHeroes, placeholder)) {
       setIdxToUpdate(0);
     }
     // set idxToUpdate to the item which is a placeholder
     setIdxToUpdate(
-      selectedSquad.findIndex((hero) => hero?.name === 'Placeholder')
+      selectedHeroes.findIndex((hero) => hero?.name === 'Placeholder')
     );
-  }, [selectedSquad]);
+  }, [selectedHeroes]);
 
   useEffect(() => {
     const results = heroes.filter((hero) =>
@@ -42,10 +42,10 @@ export const useHeroes = ({ heroes, placeholder }: IUseHeroes) => {
   const handleSelectHero = (name: string) => {
     const selectedHero = heroes.filter((hero) => hero.name === name);
     // only if selectedHero does not already exist
-    if (!selectedSquad.includes(selectedHero[0])) {
+    if (!selectedHeroes.includes(selectedHero[0])) {
       setIdxToUpdate((prev) => prev! + 1);
-      setSelectedSquad(
-        selectedSquad.map((hero, idx) => {
+      setSelectedHeroes(
+        selectedHeroes.map((hero, idx) => {
           return idx === idxToUpdate ? selectedHero[0] : hero;
         })
       );
@@ -54,8 +54,10 @@ export const useHeroes = ({ heroes, placeholder }: IUseHeroes) => {
 
   const handleRemoveHero = (name?: string, idx?: number) => {
     setIdxToUpdate(idx);
-    setSelectedSquad(
-      selectedSquad.map((hero) => (hero?.name !== name ? hero : placeholder[0]))
+    setSelectedHeroes(
+      selectedHeroes.map((hero) =>
+        hero?.name !== name ? hero : placeholder[0]
+      )
     );
   };
 
@@ -78,7 +80,7 @@ export const useHeroes = ({ heroes, placeholder }: IUseHeroes) => {
     redirectToResults,
     handleSearchHero,
     searchResults,
-    selectedSquad,
+    selectedHeroes,
     hasPlaceholder,
   };
 };

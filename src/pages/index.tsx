@@ -17,10 +17,10 @@ const Index = () => {
     handleRemoveHero,
     hasPlaceholder,
     redirectToResults,
-    selectedSquad,
+    selectedHeroes,
   } = useHeroes({ heroes, placeholder });
 
-  const { squadName } = useSquads({ selectedSquad, allSquads });
+  const { squadName } = useSquads({ selectedHeroes, allSquads });
 
   return (
     <Main
@@ -38,7 +38,7 @@ const Index = () => {
           searchHero={handleSearchHero}
         />
         <Squad
-          squad={selectedSquad}
+          squad={selectedHeroes}
           removeHero={handleRemoveHero}
           title={squadName}
         />

@@ -1,219 +1,233 @@
+import {
+  akhrasht,
+  arkhane,
+  artus,
+  azariel,
+  bellara,
+  cathbad,
+  cerunol,
+  daGhan,
+  denaya,
+  dexxa,
+  dragonkir,
+  drake,
+  dreverad,
+  elios,
+  fullmetalGoon,
+  gassar,
+  gloriana,
+  gobliniaSweetvoice,
+  goblinususTheGreat,
+  grok,
+  hargrim,
+  hilia,
+  idrill,
+  irma,
+  jagg,
+  katar,
+  kharannah,
+  khshaat,
+  kobolock,
+  kromme,
+  lasKhari,
+  llael,
+  lokhir,
+  lucky,
+  maebd,
+  maeglin,
+  magnus,
+  mizuhiko,
+  naja,
+  phoenix,
+  prookGreasyhair,
+  raarspit,
+  rizer,
+  roinar,
+  rok,
+  rokKhan,
+  sacrif,
+  sandariel,
+  sevenKnives,
+  shni,
+  silverMoon,
+  sneakyBeaky,
+  soothsayerZytima,
+  sterus,
+  sunWukong,
+  swampKiller,
+  tahit,
+  tileana,
+  tiros,
+  torak,
+  troddar,
+  trorin,
+  tsuna,
+  velundar,
+  wieland,
+  wyrmPriest,
+  zhuBajie,
+} from './heroes';
+
 export const allSquads = [
   /* Archons */
   {
     name: 'Blue Artus',
-    squadHeroes: ['Artus', 'Tiros', 'Sacrif', 'Magnus', 'Roinar'],
+    squadHeroes: [artus, tiros, sacrif, magnus, roinar],
   },
   {
     name: 'Full Archons',
-    squadHeroes: ['Artus', 'Tiros', 'Sacrif', 'Magnus', 'Elios'],
+    squadHeroes: [artus, tiros, sacrif, magnus, elios],
   },
   {
     name: 'Sterus Archons',
-    squadHeroes: ['Artus', 'Tiros', 'Sacrif', 'Magnus', 'Sterus'],
+    squadHeroes: [artus, tiros, sacrif, magnus, sterus],
   },
 
   /* Druids */
   {
     name: 'Druids',
-    squadHeroes: ['Maebd', 'Dreverad', 'Cathbad', 'Irma', 'Wieland'],
+    squadHeroes: [maebd, dreverad, cathbad, irma, wieland],
   },
 
   /* Orks */
   {
     name: 'Full Orks',
-    squadHeroes: ['Arkhane', 'Rok`Khan', 'Las`Khari', 'Da`Ghan', 'Kromme'],
+    squadHeroes: [arkhane, rokKhan, lasKhari, daGhan, kromme],
   },
   {
     name: 'Mizuorks',
-    squadHeroes: ['Arkhane', 'Rok`Khan', 'Las`Khari', 'Da`Ghan', 'Mizuhiko'],
+    squadHeroes: [arkhane, rokKhan, lasKhari, daGhan, mizuhiko],
   },
   {
     name: 'Orks 7K',
-    squadHeroes: [
-      'Arkhane',
-      'Rok`Khan',
-      'Las`Khari',
-      'Da`Ghan',
-      'Seven Knives',
-    ],
+    squadHeroes: [arkhane, rokKhan, lasKhari, daGhan, sevenKnives],
   },
 
   /* Beastmen */
   {
     name: 'Beastmen',
-    squadHeroes: ['Sun Wukong', 'Zhu Bajie', 'Tsuna', 'Rok', 'Phoenix'],
+    squadHeroes: [sunWukong, zhuBajie, tsuna, rok, phoenix],
   },
   {
     name: 'Beastmen Roinar',
-    squadHeroes: ['Sun Wukong', 'Roinar', 'Tsuna', 'Rok', 'Phoenix'],
+    squadHeroes: [sunWukong, roinar, tsuna, rok, phoenix],
   },
   {
     name: 'Beastmen Aza',
-    squadHeroes: ['Sun Wukong', 'Azariel', 'Tsuna', 'Rok', 'Phoenix'],
+    squadHeroes: [sunWukong, azariel, tsuna, rok, phoenix],
   },
   {
     name: 'Roinar Beastmen',
-    squadHeroes: ['Roinar', 'Sun Wukong', 'Tsuna', 'Rok', 'Phoenix'],
+    squadHeroes: [roinar, sunWukong, tsuna, rok, phoenix],
   },
 
   /* Dragonkin */
   {
     name: 'DK Magnus',
-    squadHeroes: ['Drakonir', 'Magnus', 'Dexxa', 'Katar', 'Kharannah'],
+    squadHeroes: [dragonkir, magnus, dexxa, katar, kharannah],
   },
   {
     name: 'DK Kromme',
-    squadHeroes: ['Drakonir', 'Kromme', 'Dexxa', 'Katar', 'Kharannah'],
+    squadHeroes: [dragonkir, kromme, dexxa, katar, kharannah],
   },
   {
     name: 'DK Roinar',
-    squadHeroes: ['Drakonir', 'Roinar', 'Dexxa', 'Katar', 'Kharannah'],
+    squadHeroes: [dragonkir, roinar, dexxa, katar, kharannah],
   },
   {
     name: 'DK Lucky',
-    squadHeroes: ['Drakonir', 'Lucky', 'Dexxa', 'Katar', 'Kharannah'],
+    squadHeroes: [dragonkir, lucky, dexxa, katar, kharannah],
   },
 
   /* Dark Elves */
   {
     name: 'Dark Elves',
-    squadHeroes: ['Naja', 'Drake', 'Roinar', 'Azariel', 'Lokhir'],
+    squadHeroes: [naja, drake, roinar, azariel, lokhir],
   },
   {
     name: 'Dark Elves Llael',
-    squadHeroes: ['Naja', 'Drake', 'Roinar', 'Llael', 'Lokhir'],
+    squadHeroes: [naja, drake, roinar, llael, lokhir],
   },
   {
     name: 'Dark Elves Roinar',
-    squadHeroes: ['Naja', 'Drake', 'Roinar', 'Llael', 'Lokhir'],
+    squadHeroes: [naja, drake, roinar, llael, lokhir],
   },
 
   /* Barbarians */
   {
     name: 'Barbs',
-    squadHeroes: [
-      'Denaya',
-      'Swamp Killer',
-      'Seven Knives',
-      'Bellara',
-      'Silver Moon',
-    ],
+    squadHeroes: [denaya, swampKiller, sevenKnives, bellara, silverMoon],
   },
   {
     name: 'Barbs Aza',
-    squadHeroes: [
-      'Denaya',
-      'Swamp Killer',
-      'Seven Knives',
-      'Bellara',
-      'Azariel',
-    ],
+    squadHeroes: [denaya, swampKiller, sevenKnives, bellara, azariel],
   },
   {
     name: 'Barbs Magnus',
-    squadHeroes: [
-      'Denaya',
-      'Swamp Killer',
-      'Seven Knives',
-      'Bellara',
-      'Magnus',
-    ],
+    squadHeroes: [denaya, swampKiller, sevenKnives, bellara, magnus],
   },
   {
     name: 'Suicide Barbs',
-    squadHeroes: ['Denaya', 'Swamp Killer', 'Seven Knives', 'Bellara', 'Tsuna'],
+    squadHeroes: [denaya, swampKiller, sevenKnives, bellara, tsuna],
   },
   {
     name: 'Green Barbs',
-    squadHeroes: ['Denaya', 'Dreverad', 'Cathbad', 'Bellara', 'Seven Knives'],
+    squadHeroes: [denaya, dreverad, cathbad, bellara, sevenKnives],
   },
   {
     name: 'Barbs Wieland',
-    squadHeroes: [
-      'Denaya',
-      'Wieland',
-      'Swamp Killer',
-      'Bellara',
-      'Seven Knives',
-    ],
+    squadHeroes: [denaya, wieland, swampKiller, bellara, sevenKnives],
   },
 
   /* Wild Elves */
   {
     name: 'Wild Elves',
-    squadHeroes: ['Gloriana', 'Cerunol', 'Tileana', 'Maeglin', 'Sandariel'],
+    squadHeroes: [gloriana, cerunol, tileana, maeglin, sandariel],
   },
   {
     name: 'Sandy Wild Elves',
-    squadHeroes: ['Gloriana', 'Cerunol', 'Idrill', 'Maeglin', 'Sandariel'],
+    squadHeroes: [gloriana, cerunol, idrill, maeglin, sandariel],
   },
 
   /* Goblins */
   {
     name: 'Goblins',
     squadHeroes: [
-      'Goblinusus The Great',
-      'Prook Greasyhair',
-      'Sneaky Beaky',
-      'Goblinia Sweetvoice',
-      'Fullmetal Goon',
+      goblinususTheGreat,
+      prookGreasyhair,
+      sneakyBeaky,
+      gobliniaSweetvoice,
+      fullmetalGoon,
     ],
   },
 
   /* Dwarves */
   {
     name: 'Dwarves',
-    squadHeroes: ['Trorin', 'Troddar', 'Velundar', 'Hargrim', 'Gassar'],
-  },
-  {
-    name: 'Ambror Dwarves',
-    squadHeroes: ['Trorin', 'Troddar', 'Velundar', 'Hargrim', 'Ambror'],
-  },
-  {
-    name: 'Angrim Dwarves',
-    squadHeroes: ['Trorin', 'Troddar', 'Velundar', 'Hargrim', 'Angrim'],
+    squadHeroes: [trorin, troddar, velundar, hargrim, gassar],
   },
 
   /* Ra`Achne */
   {
     name: 'Ra`Achne',
-    squadHeroes: ['Hilia', 'Akhrasht', 'Tahit', 'Khshaat', 'Raarspit'],
+    squadHeroes: [hilia, akhrasht, tahit, khshaat, raarspit],
   },
   {
     name: 'Rizer Ra`Achne',
-    squadHeroes: ['Hilia', 'Akhrasht', 'Tahit', 'Khshaat', 'Rizer'],
+    squadHeroes: [hilia, akhrasht, tahit, khshaat, rizer],
   },
 
   /* Kobolds */
   {
     name: 'Kobolds',
-    squadHeroes: [
-      'Wyrm Priest',
-      'Soothsayer Zytima',
-      'Kobolock',
-      'Grock',
-      'Torak',
-    ],
+    squadHeroes: [wyrmPriest, soothsayerZytima, kobolock, grok, torak],
   },
   {
     name: 'Jagg Kobolds',
-    squadHeroes: [
-      'Wyrm Priest',
-      'Soothsayer Zytima',
-      'Kobolock',
-      'Grock',
-      'Jagg',
-    ],
+    squadHeroes: [wyrmPriest, soothsayerZytima, kobolock, grok, jagg],
   },
   {
     name: 'Shni Kobolds',
-    squadHeroes: [
-      'Wyrm Priest',
-      'Soothsayer Zytima',
-      'Kobolock',
-      'Grock',
-      'Shni',
-    ],
+    squadHeroes: [wyrmPriest, soothsayerZytima, kobolock, grok, shni],
   },
 ];

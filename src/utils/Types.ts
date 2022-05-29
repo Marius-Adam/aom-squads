@@ -7,5 +7,5 @@ export interface Hero {
 
 export interface Squad {
   name: string;
-  squadHeroes: string[];
+  squadHeroes: Hero[];
 }
