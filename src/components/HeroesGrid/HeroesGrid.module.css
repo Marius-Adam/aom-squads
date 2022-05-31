@@ -17,14 +17,12 @@
   @apply absolute w-full z-20;
   content: '';
   height: 10%;
-  bottom: calc(100% - 510px);
+  bottom: calc(100% - 450px);
   background: linear-gradient(transparent 0px, black);
 }
 
 .heroesGrid__wrapper {
   @apply relative;
-  background: url(/background.jpg);
-  background-size: cover;
 }
 
 .heroesGrid__item {
@@ -47,7 +45,7 @@
   }
 
   .heroesGrid__wrapper:before {
-    bottom: calc(100% - 306px);
+    bottom: calc(100% - 250px);
   }
 
   .heroesGrid__item {

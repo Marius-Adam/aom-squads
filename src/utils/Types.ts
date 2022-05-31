@@ -1,11 +1,11 @@
-export interface Hero {
+export interface IHero {
   name: string;
   class: string;
   faction: string;
   brotherhood: string[] | null[];
 }
 
-export interface Squad {
+export interface ISquad {
   name: string;
-  squadHeroes: Hero[];
+  squadHeroes: IHero[];
 }

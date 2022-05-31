@@ -1,18 +1,26 @@
 import classNames from 'classnames';
 import Image from 'next/image';
+import type { MouseEventHandler } from 'react';
 
-import type { Hero } from '@/utils/Types';
+import type { IHero } from '@/utils/Types';
 
 import MotionDiv from '../MotionDiv/MotionDiv';
 import css from './Squad.module.css';
 
 interface ISquad {
   title?: string;
-  squad: (Hero | undefined)[];
-  removeHero: (name?: string | undefined, idx?: number) => void;
+  squad: (IHero | undefined)[] | undefined;
+  removeHero?: (
+    name?: string | undefined,
+    idx?: number | undefined
+  ) => MouseEventHandler<HTMLDivElement> | undefined | void;
 }
 
 const Squad = ({ squad, removeHero, title }: ISquad) => {
+  const handleRemoveHero = (idx: number, hero?: string) => {
+    return removeHero && removeHero(hero, idx);
+  };
+
   return (
     <>
       <div className={css.squad}>
@@ -31,7 +39,7 @@ const Squad = ({ squad, removeHero, title }: ISquad) => {
                     'transition-transform': hero?.name !== 'Placeholder',
                     'hover:scale-': hero?.name !== 'Placeholder',
                   })}
-                  onClick={() => removeHero(hero?.name, idx)}
+                  onClick={() => handleRemoveHero(idx, hero?.name)}
                 >
                   <Image
                     alt="hero"

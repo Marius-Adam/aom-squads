@@ -1,19 +1,17 @@
 import { debounce, isEqual } from 'lodash';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import type { Hero } from '@/utils/Types';
+import type { IHero } from '@/utils/Types';
 
 interface IUseHeroes {
-  heroes: Hero[];
-  placeholder: (Hero | undefined)[];
+  heroes: IHero[];
+  placeholder: (IHero | undefined)[];
 }
 
 export const useHeroes = ({ heroes, placeholder }: IUseHeroes) => {
-  const router = useRouter();
   const [selectedHeroes, setSelectedHeroes] =
-    useState<(Hero | undefined)[]>(placeholder);
-  const [searchResults, setSearchResults] = useState<Hero[]>([]);
+    useState<(IHero | undefined)[]>(placeholder);
+  const [heroSearchResults, setHeroSearchResults] = useState<IHero[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [idxToUpdate, setIdxToUpdate] = useState<number | undefined>(0);
 
@@ -36,7 +34,7 @@ export const useHeroes = ({ heroes, placeholder }: IUseHeroes) => {
     const results = heroes.filter((hero) =>
       hero.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
-    setSearchResults(results);
+    setHeroSearchResults(results);
   }, [searchQuery]);
 
   const handleSelectHero = (name: string) => {
@@ -61,12 +59,6 @@ export const useHeroes = ({ heroes, placeholder }: IUseHeroes) => {
     );
   };
 
-  const redirectToResults = () => {
-    if (!hasPlaceholder) {
-      router.push('/results');
-    }
-  };
-
   const handleSearchHero = debounce(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       setSearchQuery(event.target.value);
@@ -74,12 +66,16 @@ export const useHeroes = ({ heroes, placeholder }: IUseHeroes) => {
     400
   );
 
+  const resetHeroSelection = () => {
+    setSelectedHeroes(placeholder);
+  };
+
   return {
     handleSelectHero,
     handleRemoveHero,
-    redirectToResults,
+    resetHeroSelection,
     handleSearchHero,
-    searchResults,
+    heroSearchResults,
     selectedHeroes,
     hasPlaceholder,
   };

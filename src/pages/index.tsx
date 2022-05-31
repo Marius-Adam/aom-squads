@@ -1,26 +1,58 @@
+import router from 'next/router';
+import { useState } from 'react';
+
 import { heroes, placeholder } from '@/api/heroes';
 import { allSquads } from '@/api/squads';
 import Button from '@/components/Button';
 import HeroesGrid from '@/components/HeroesGrid';
 import MotionDiv from '@/components/MotionDiv';
+import Search from '@/components/SearchBar';
 import Squad from '@/components/Squad';
+import SquadsPanel from '@/components/SquadsPanel';
 import { useHeroes } from '@/hooks/useHeroes';
 import { useSquads } from '@/hooks/useSquads';
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 
 const Index = () => {
+  const [view, setView] = useState<'heroes' | 'squads'>('heroes');
+
   const {
-    handleSearchHero,
-    searchResults,
     handleSelectHero,
     handleRemoveHero,
+    resetHeroSelection,
+    handleSearchHero,
+    heroSearchResults,
     hasPlaceholder,
-    redirectToResults,
     selectedHeroes,
   } = useHeroes({ heroes, placeholder });
 
-  const { squadName } = useSquads({ selectedHeroes, allSquads });
+  const {
+    handleSelectSquad,
+    resetSquadSelection,
+    setSquadName,
+    squadName,
+    selectedSquad,
+    isSquadSelected,
+    handleSearchSquad,
+    squadSearchResults,
+  } = useSquads({
+    selectedHeroes,
+    allSquads,
+  });
+
+  const handleChangeView = () => {
+    if (view === 'heroes') {
+      setView('squads');
+      resetSquadSelection();
+    }
+
+    if (view === 'squads') {
+      setView('heroes');
+      resetHeroSelection();
+    }
+    setSquadName('');
+  };
 
   return (
     <Main
@@ -32,18 +64,36 @@ const Index = () => {
       }
     >
       <MotionDiv>
-        <HeroesGrid
-          heroes={searchResults}
-          selectHero={handleSelectHero}
-          searchHero={handleSearchHero}
-        />
-        <Squad
-          squad={selectedHeroes}
-          removeHero={handleRemoveHero}
-          title={squadName}
-        />
+        <div className="panel__wrapper">
+          <Search
+            onChange={view === 'heroes' ? handleSearchHero : handleSearchSquad}
+            changeView={handleChangeView}
+            view={view}
+          />
+          {view === 'heroes' ? (
+            <HeroesGrid
+              heroes={heroSearchResults}
+              selectHero={handleSelectHero}
+            />
+          ) : (
+            <SquadsPanel
+              squads={squadSearchResults}
+              selectSquad={handleSelectSquad}
+            />
+          )}
+        </div>
+        <div className="mt-8 md:mt-20">
+          <Squad
+            squad={view === 'heroes' ? selectedHeroes : selectedSquad}
+            removeHero={view === 'heroes' ? handleRemoveHero : undefined}
+            title={squadName}
+          />
+        </div>
         <div className="mt-8 flex justify-center">
-          <Button disabled={hasPlaceholder} onClick={redirectToResults}>
+          <Button
+            disabled={view === 'heroes' ? hasPlaceholder : isSquadSelected}
+            onClick={() => router.push('/results')}
+          >
             Generate Recommendations
           </Button>
         </div>

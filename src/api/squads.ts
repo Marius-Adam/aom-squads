@@ -23,7 +23,6 @@ import {
   hilia,
   idrill,
   irma,
-  jagg,
   katar,
   kharannah,
   khshaat,
@@ -41,18 +40,15 @@ import {
   phoenix,
   prookGreasyhair,
   raarspit,
-  rizer,
   roinar,
   rok,
   rokKhan,
   sacrif,
   sandariel,
   sevenKnives,
-  shni,
   silverMoon,
   sneakyBeaky,
   soothsayerZytima,
-  sterus,
   sunWukong,
   swampKiller,
   tahit,
@@ -77,10 +73,6 @@ export const allSquads = [
   {
     name: 'Full Archons',
     squadHeroes: [artus, tiros, sacrif, magnus, elios],
-  },
-  {
-    name: 'Sterus Archons',
-    squadHeroes: [artus, tiros, sacrif, magnus, sterus],
   },
 
   /* Druids */
@@ -212,22 +204,10 @@ export const allSquads = [
     name: 'Ra`Achne',
     squadHeroes: [hilia, akhrasht, tahit, khshaat, raarspit],
   },
-  {
-    name: 'Rizer Ra`Achne',
-    squadHeroes: [hilia, akhrasht, tahit, khshaat, rizer],
-  },
 
   /* Kobolds */
   {
     name: 'Kobolds',
     squadHeroes: [wyrmPriest, soothsayerZytima, kobolock, grok, torak],
-  },
-  {
-    name: 'Jagg Kobolds',
-    squadHeroes: [wyrmPriest, soothsayerZytima, kobolock, grok, jagg],
-  },
-  {
-    name: 'Shni Kobolds',
-    squadHeroes: [wyrmPriest, soothsayerZytima, kobolock, grok, shni],
   },
 ];

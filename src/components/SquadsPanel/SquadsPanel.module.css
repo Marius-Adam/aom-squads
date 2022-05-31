@@ -1,0 +1,45 @@
+.squadsPanel {
+  @apply justify-center h-2/4 overflow-y-scroll z-10 w-full;
+  @apply gap-4 md:gap-8 lg:gap-10;
+  @apply pb-12 pt-1;
+  height: 450px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.squadsPanel::-webkit-scrollbar {
+  display: none;
+}
+
+.squadsPanel__wrapper:before {
+  @apply absolute w-full z-20;
+  content: '';
+  height: 10%;
+  bottom: calc(100% - 450px);
+  background: linear-gradient(transparent 0px, black);
+}
+
+.squadsPanel__wrapper {
+  @apply relative;
+}
+
+.squadsPanel__item {
+  @apply transition-transform mx-auto;
+  transform: scale(1);
+  max-width: fit-content;
+}
+
+.squadsPanel__item:hover {
+  transform: scale(1.025);
+}
+
+@media only screen and (max-width: 640px) {
+  .squadsPanel {
+    @apply gap-4;
+    height: 250px;
+  }
+
+  .squadsPanel__wrapper:before {
+    bottom: calc(100% - 250px);
+  }
+}
